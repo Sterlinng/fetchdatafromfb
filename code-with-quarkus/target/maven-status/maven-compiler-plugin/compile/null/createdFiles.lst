@@ -1,4 +1,0 @@
-org\acme\services\impl\FetchDataServiceImpl.class
-org\acme\dtos\NameListDTO.class
-org\acme\resource\api\NameListResource.class
-org\acme\services\FetchDataService.class
