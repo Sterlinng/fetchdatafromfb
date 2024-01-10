@@ -1,5 +1,8 @@
-C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\impl\UserService.java
-C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\IUserService.java
-C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\UserResource.java
-C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\controller\UserController.java
-C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\User.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\ICitizenMgtService.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\impl\MissionMgtService.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\IMissionMgtService.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\Citizen.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\CitizenResource.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\impl\OrganizationMgtService.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\IOrganizationMgtService.java
+C:\Users\amine\OneDrive\Bureau\Amine\Cesi\fetchdata\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\impl\CitizenMgtService.java

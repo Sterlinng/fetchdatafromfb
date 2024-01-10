@@ -4,30 +4,50 @@ package org.acme.services.management.impl;
 import org.acme.model.Citizen;
 import org.acme.services.management.ICitizenMgtService;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
+
+@ApplicationScoped
 public class CitizenMgtService implements ICitizenMgtService {
 
+    
+    @Inject
+    EntityManager entityManager;
+    
+
     @Override
+    @Transactional
     public Citizen createCitizen(Citizen citizen) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createCitizen'");
+        entityManager.persist(citizen);
+        return citizen;
     }
 
     @Override
+    @Transactional
     public Citizen getCitizenById(Integer citizenId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCitizenById'");
+        return entityManager.find(Citizen.class, citizenId);
     }
 
     @Override
+    @Transactional
     public Citizen updateCitizen(Integer citizenId, Citizen updatedCitizen) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateCitizen'");
+        Citizen existingCitizen = entityManager.find(Citizen.class, citizenId);
+        if (existingCitizen != null) {
+            existingCitizen.name = updatedCitizen.name;
+            existingCitizen.id = updatedCitizen.id;
+        }
+        return existingCitizen;
     }
 
     @Override
+    @Transactional
     public void deleteCitizen(Integer citizenId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteCitizen'");
+        Citizen citizenToDelete = entityManager.find(Citizen.class, citizenId);
+        if (citizenToDelete != null) {
+            entityManager.remove(citizenToDelete);
+        }
     }
 
     

@@ -2,6 +2,9 @@ package org.acme.services.management;
 
 import org.acme.model.Citizen;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public interface ICitizenMgtService {
 
     /**
