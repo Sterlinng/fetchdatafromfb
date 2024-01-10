@@ -15,6 +15,7 @@ import jakarta.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class UserController {
     
+    
 
     @Inject
     IUserService svc;
