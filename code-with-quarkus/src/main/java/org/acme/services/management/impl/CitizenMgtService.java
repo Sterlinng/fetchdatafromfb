@@ -36,7 +36,7 @@ public class CitizenMgtService implements ICitizenMgtService {
     @Override
     @Transactional
     public List<Citizens> getAllCitizens() {
-        return entityManager.createQuery("SELECT c FROM Citizen c", Citizens.class).getResultList();
+        return entityManager.createQuery("SELECT c FROM Citizens c", Citizens.class).getResultList();
     }
 
     @Override
