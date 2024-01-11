@@ -35,7 +35,7 @@ public class CitizenMgtService implements ICitizenMgtService {
     public Citizen updateCitizen(Integer citizenId, Citizen updatedCitizen) {
         Citizen existingCitizen = entityManager.find(Citizen.class, citizenId);
         if (existingCitizen != null) {
-            existingCitizen.name = updatedCitizen.name;
+            existingCitizen.firstname = updatedCitizen.firstname;
             existingCitizen.id = updatedCitizen.id;
         }
         return existingCitizen;

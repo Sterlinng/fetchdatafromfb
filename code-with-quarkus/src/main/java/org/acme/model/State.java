@@ -12,6 +12,10 @@ public class State {
     public String wording;
     public Date date_state;
 
+    public State(){
+
+    }
+
     public State(int id_state, String wording, Date date_state) {
         this.id_state = id_state;
         this.wording = wording;

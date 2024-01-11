@@ -10,6 +10,9 @@ public class Send {
     public int id_send;
     public String notice_user;
 
+    public Send(){
+        
+    }
 
     public Send(int id_send, String notice_user) {
         this.notice_user = notice_user;

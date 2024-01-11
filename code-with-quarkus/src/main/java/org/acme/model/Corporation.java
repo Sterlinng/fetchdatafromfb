@@ -16,6 +16,10 @@ public class Corporation {
     public String phone_number;
     public String ZIP_code;
 
+    public Corporation(){
+        
+    }
+
     public Corporation(int id_corporation, String name, String Siret, String Siren, int note, 
         String address, String phone_number, String ZIP_code){
             this.id_corporation = id_corporation;

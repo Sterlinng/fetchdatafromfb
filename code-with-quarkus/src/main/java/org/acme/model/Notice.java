@@ -13,6 +13,10 @@ public class Notice {
     public String contained;
     public Date date_notice;
 
+    public Notice(){
+        
+    }
+
     public Notice(int id_avis, String name, String contenue, Date date_avis) {
         this.id_notice = id_avis;
         this.wording = name;

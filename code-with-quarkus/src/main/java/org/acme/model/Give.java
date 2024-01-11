@@ -10,6 +10,10 @@ public class Give {
     public int id_give;
     public String notice_mission;
 
+    public Give(){
+        
+    }
+
 
     public Give(int id_give, String notice_mission) {
         this.id_give = id_give;

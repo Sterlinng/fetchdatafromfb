@@ -11,6 +11,10 @@ public class Category {
     public String name;
     public String wording;
 
+    public Category() {
+        
+    }
+
     public Category(int id_category, String name, String wording){
         this.id_category = id_category;
         this.name = name;

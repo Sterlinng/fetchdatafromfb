@@ -4,14 +4,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class interact {
+public class Interact {
 
     @Id
     public int id_interact;
     public String Status;
 
+    public Interact(){
+        
+    }
 
-    public interact(int id_interact, String Status) {
+
+    public Interact(int id_interact, String Status) {
         this.id_interact = id_interact;
         this.Status = Status;
     }

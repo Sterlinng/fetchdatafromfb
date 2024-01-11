@@ -14,6 +14,10 @@ public class Certificate {
     public String name;
     public Date date_certificate;
 
+    public Certificate(){
+        
+    }
+
 
     public Certificate(int id_certificate, String wording, String name, Date date_certificate) {
         this.id_certificate = id_certificate;

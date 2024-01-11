@@ -1,7 +1,7 @@
-org\acme\services\management\IOrganizationMgtService.class
 org\acme\services\management\ICitizenMgtService.class
+org\acme\services\management\impl\CitizenMgtService.class
+org\acme\services\management\IOrganizationMgtService.class
 org\acme\model\Citizen.class
 org\acme\services\management\IMissionMgtService.class
 org\acme\services\management\impl\OrganizationMgtService.class
 org\acme\services\management\impl\MissionMgtService.class
-org\acme\services\management\impl\CitizenMgtService.class
