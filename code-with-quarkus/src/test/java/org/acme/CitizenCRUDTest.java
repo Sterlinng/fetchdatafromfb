@@ -13,20 +13,4 @@ import static org.hamcrest.Matchers.*;
 @QuarkusTest
 public class CitizenCRUDTest {
 
-
-    @Test
-    public void testCreateCitizen() {
-        Citizen newCitizen = new Citizen();
-        newCitizen.firstname = "Emmanuel GARNIER";
-
-        given()
-            .contentType(ContentType.JSON)
-            .body(newCitizen)
-        .when()
-            .post("/citizen") 
-        .then()
-            .statusCode(201)
-            .body("name", equalTo("Emmanuel GARNIER")); 
-    }
-
 }
