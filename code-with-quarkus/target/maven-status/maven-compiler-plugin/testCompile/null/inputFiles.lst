@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 C:\Users\amine\Desktop\projets\fetchdatafromfb\code-with-quarkus\src\test\java\org\acme\CitizensCRUDTest.java
 C:\Users\amine\Desktop\projets\fetchdatafromfb\code-with-quarkus\src\test\java\org\acme\HelloResourceTest.java
 C:\Users\amine\Desktop\projets\fetchdatafromfb\code-with-quarkus\src\test\java\org\acme\CitizenCRUDTest.java
+=======
+C:\Users\manub\OneDrive\Desktop\fetchdatafromfb\code-with-quarkus\src\test\java\org\acme\HelloResourceTest.java
+C:\Users\manub\OneDrive\Desktop\fetchdatafromfb\code-with-quarkus\src\test\java\org\acme\CitizenCRUDTest.java
+C:\Users\manub\OneDrive\Desktop\fetchdatafromfb\code-with-quarkus\src\test\java\org\acme\CitizensCRUDTest.java
+>>>>>>> 63d5f13fd8683a9bd8e09701440cda202c6841b2
