@@ -3,10 +3,12 @@ package org.acme.model;
 import java.sql.Date;
 import java.sql.Time;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Mission {
 
+    @Id
     public int id_mission;
     public String wording;
     public Date date_mission;

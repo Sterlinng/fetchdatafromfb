@@ -2,11 +2,14 @@ package org.acme.model;
 
 import java.sql.Date;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Notice {
-    public String wording;
+
+    @Id
     public int id_notice;
+    public String wording;
     public String contained;
     public Date date_notice;
 

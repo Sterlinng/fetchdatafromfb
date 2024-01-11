@@ -1,9 +1,12 @@
 package org.acme.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Corporation {
+
+    @Id
     public int id_corporation;
     public String name;
     public String Siret;

@@ -2,9 +2,12 @@ package org.acme.model;
 
 import java.sql.Date;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class State {
+
+    @Id
     public int id_state;
     public String wording;
     public Date date_state;

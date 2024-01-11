@@ -3,9 +3,12 @@ package org.acme.model;
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Certificate {
+
+    @Id
     public int id_certificate;
     public String wording;
     public String name;
