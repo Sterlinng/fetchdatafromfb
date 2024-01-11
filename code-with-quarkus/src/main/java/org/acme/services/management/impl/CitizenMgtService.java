@@ -1,13 +1,15 @@
 package org.acme.services.management.impl;
 
 
-import org.acme.model.Citizen;
+import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
+
+import java.util.List;
 
 @ApplicationScoped
 public class CitizenMgtService implements ICitizenMgtService {
@@ -19,37 +21,43 @@ public class CitizenMgtService implements ICitizenMgtService {
 
     @Override
     @Transactional
-    public Citizen createCitizen(Citizen citizen) {
-        entityManager.persist(citizen);
-        return citizen;
+    public Citizens createCitizen(Citizens citizens) {
+        entityManager.persist(citizens);
+        return citizens;
     }
 
     @Override
     @Transactional
-    public Citizen getCitizenById(Integer citizenId) {
-        return entityManager.find(Citizen.class, citizenId);
+    public Citizens getCitizenById(Integer citizenId) {
+        return entityManager.find(Citizens.class, citizenId);
     }
 
     @Override
     @Transactional
-    public Citizen updateCitizen(Integer citizenId, Citizen updatedCitizen) {
-        Citizen existingCitizen = entityManager.find(Citizen.class, citizenId);
-        if (existingCitizen != null) {
-            existingCitizen.firstname = updatedCitizen.firstname;
-            existingCitizen.id = updatedCitizen.id;
+    public List<Citizens> getAllCitizens() {
+        return entityManager.createQuery("SELECT c FROM Citizen c", Citizens.class).getResultList();
+    }
+
+    @Override
+    @Transactional
+    public Citizens updateCitizen(Integer citizenId, Citizens updatedCitizens) {
+        Citizens existingCitizens = entityManager.find(Citizens.class, citizenId);
+        if (existingCitizens != null) {
+            existingCitizens.firstname = updatedCitizens.firstname;
+            existingCitizens.id_citizens = updatedCitizens.id_citizens;
         }
-        return existingCitizen;
+        return existingCitizens;
     }
 
     @Override
     @Transactional
     public void deleteCitizen(Integer citizenId) {
-        Citizen citizenToDelete = entityManager.find(Citizen.class, citizenId);
-        if (citizenToDelete != null) {
-            entityManager.remove(citizenToDelete);
+        Citizens citizensToDelete = entityManager.find(Citizens.class, citizenId);
+        if (citizensToDelete != null) {
+            entityManager.remove(citizensToDelete);
         }
     }
 
-    
-    
+
+
 }

@@ -1,5 +1,5 @@
 package org.acme.resource.api;
-import org.acme.model.Citizen;
+import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
 
 import jakarta.inject.Inject;
@@ -18,7 +18,7 @@ public class CitizenResource {
     ICitizenMgtService citizenMgtService;
 
     @POST
-    public Citizen createCitizen(Citizen citizen) {
+    public Citizens createCitizen(Citizens citizen) {
         return citizenMgtService.createCitizen(citizen);
     }
 }
