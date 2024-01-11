@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConsultationMissionDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CitizensCRUDTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">org.acme.resource.api.dto</a> &gt; <span class="el_source">ConsultationMissionDTO.java</span></div><h1>ConsultationMissionDTO.java</h1><pre class="source lang-java linenums">package org.acme.resource.api.dto;
+
+import java.sql.Date;
+import java.sql.Time;
+
+public class ConsultationMissionDTO {
+    
+    public String name;
+    public String name_corporation;
+    public String address; 
+    public String ZIP_code;
+    public Date date_mission;
+    public Time beginning_hour;
+    public Time end_hour;
+    public String description;
+
+
+<span class="nc" id="L18">    public ConsultationMissionDTO(String name, String name_corporation, String address, String ZIP_code, Date date_mission, Time beginning_hour, Time end_hour, String description) {</span>
+<span class="nc" id="L19">        this.name = name;</span>
+<span class="nc" id="L20">        this.name_corporation = name_corporation;</span>
+<span class="nc" id="L21">        this.address = address;</span>
+<span class="nc" id="L22">        this.ZIP_code = ZIP_code;</span>
+<span class="nc" id="L23">        this.date_mission = date_mission;</span>
+<span class="nc" id="L24">        this.beginning_hour = beginning_hour;</span>
+<span class="nc" id="L25">        this.end_hour = end_hour;</span>
+<span class="nc" id="L26">        this.description = description;</span>
+<span class="nc" id="L27">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

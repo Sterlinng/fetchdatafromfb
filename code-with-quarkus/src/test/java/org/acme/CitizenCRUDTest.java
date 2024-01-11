@@ -1,6 +1,6 @@
 package org.acme;
 
-import org.acme.model.Citizen;
+import org.acme.model.Citizens;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
