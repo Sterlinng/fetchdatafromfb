@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de création d'utilisateur</title>
+</head>
+<body>
+
+    <h2>Formulaire d'inscription</h2>
+
+    <form action="/submit" method="post">
+        <!-- Champ Nom -->
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+        <br>
+
+        <!-- Champ Prénom -->
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+        <br>
+
+        <!-- Champ Adresse -->
+        <label for="address">Adresse</label>
+        <input type="text" id="address" name="address" required>
+        <br>
+
+        <!-- Champ Code Postal -->
+        <label for="ZIP_Code">Code postal</label>
+        <input type="text" id="ZIP_Code" name="ZIP_code" required>
+        <br>
+
+        <!-- Champ Numéro de téléphone -->
+        <label for="phone_number">Numéro de téléphone</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <br>
+
+        <!-- Bouton de soumission -->
+        <input type="submit" value="S'inscrire">
+    </form>
+
+</body>
+</html>
