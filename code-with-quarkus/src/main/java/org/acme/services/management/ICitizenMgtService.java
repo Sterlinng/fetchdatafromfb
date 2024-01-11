@@ -1,8 +1,11 @@
 package org.acme.services.management;
 
-import org.acme.model.Citizen;
+import jakarta.transaction.Transactional;
+import org.acme.model.Citizens;
 
 import jakarta.enterprise.context.ApplicationScoped;
+
+import java.util.List;
 
 @ApplicationScoped
 public interface ICitizenMgtService {
@@ -10,10 +13,10 @@ public interface ICitizenMgtService {
     /**
      * Create a new citizen in the DataBase
      *
-     * @param citizen -> The citizen we want to create
+     * @param citizens -> The citizen we want to create
      * @return The created citizen with a valid id.
      */
-    public Citizen createCitizen(Citizen citizen);
+    public Citizens createCitizen(Citizens citizens);
 
     /**
      * Read a citizen by an id
@@ -21,16 +24,19 @@ public interface ICitizenMgtService {
      * @param citizenId -> The citizen's id
      * @return The Citizen
      */
-    public Citizen getCitizenById(Integer citizenId);
+    public Citizens getCitizenById(Integer citizenId);
+
+    @Transactional
+    List<Citizens> getAllCitizens();
 
     /**
      * Update a citizen's information
      * 
      * @param citizenId -> The Citizen we want to update
-     * @param updatedCitizen -> The updated citizen
+     * @param updatedCitizens -> The updated citizen
      * @return Updated Citizen
      */
-    public Citizen updateCitizen(Integer citizenId, Citizen updatedCitizen);
+    public Citizens updateCitizen(Integer citizenId, Citizens updatedCitizens);
 
     /**
      * Delete a Citizen
@@ -40,5 +46,5 @@ public interface ICitizenMgtService {
      */
     public void deleteCitizen(Integer citizenId);
     
-    
+
 }
