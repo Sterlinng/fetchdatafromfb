@@ -17,7 +17,7 @@ public class CitizenCRUDTest {
     @Test
     public void testCreateCitizen() {
         Citizen newCitizen = new Citizen();
-        newCitizen.name = "Emmanuel GARNIER";
+        newCitizen.firstname = "Emmanuel GARNIER";
 
         given()
             .contentType(ContentType.JSON)
