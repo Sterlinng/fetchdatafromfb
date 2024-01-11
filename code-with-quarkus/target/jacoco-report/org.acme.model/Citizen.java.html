@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Citizen.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HelloResourceTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">org.acme.model</a> &gt; <span class="el_source">Citizen.java</span></div><h1>Citizen.java</h1><pre class="source lang-java linenums">package org.acme.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Citizen {
+
+    @Id
+    public int id;
+    public String lastname;
+    public String firstname;
+    public String ZIP_code;
+    public String phone_number;
+    public String Point;
+    public String address;
+    public int level;
+    public int Note;
+
+<span class="nc" id="L20">    public Citizen(){</span>
+        
+<span class="nc" id="L22">    }</span>
+
+    public Citizen(
+        int id, String firstname, String lastname, String ZIP_code, String phone_number, 
+<span class="nc" id="L26">        String Point, String address, int level, int Note) {</span>
+
+<span class="nc" id="L28">            this.id = id;</span>
+<span class="nc" id="L29">            this.firstname = firstname;</span>
+<span class="nc" id="L30">            this.lastname = lastname;</span>
+<span class="nc" id="L31">            this.ZIP_code = ZIP_code;</span>
+<span class="nc" id="L32">            this.phone_number = phone_number;</span>
+<span class="nc" id="L33">            this.address = address;</span>
+<span class="nc" id="L34">            this.Point = Point;</span>
+<span class="nc" id="L35">            this.Note = Note;</span>
+<span class="nc" id="L36">            this.level = level;</span>
+<span class="nc" id="L37">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
