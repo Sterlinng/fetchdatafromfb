@@ -1,5 +1,8 @@
 package org.acme.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Give {
     public String notice_mission;
 

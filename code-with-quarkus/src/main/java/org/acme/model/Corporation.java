@@ -1,5 +1,8 @@
 package org.acme.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Corporation {
     public int id_corporation;
     public String name;

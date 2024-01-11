@@ -2,6 +2,9 @@ package org.acme.model;
 
 import java.sql.Date;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Certificate {
     public int id_certificate;
     public String wording;

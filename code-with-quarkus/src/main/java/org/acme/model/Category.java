@@ -1,5 +1,8 @@
 package org.acme.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Category {
     public int id_category;
     public String name;

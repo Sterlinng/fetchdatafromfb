@@ -1,7 +1,9 @@
 package org.acme.model;
 
 import java.sql.Date;
+import jakarta.persistence.Entity;
 
+@Entity
 public class Notice {
     public String wording;
     public int id_notice;

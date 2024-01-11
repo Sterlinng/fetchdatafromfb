@@ -2,7 +2,9 @@ package org.acme.model;
 
 import java.sql.Date;
 import java.sql.Time;
+import jakarta.persistence.Entity;
 
+@Entity
 public class Mission {
 
     public int id_mission;
