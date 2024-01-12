@@ -1,12 +1,19 @@
 package org.acme.resource.api;
 import jakarta.ws.rs.*;
+import java.util.List;
 import org.acme.model.Citizens;
-import org.acme.resource.api.dto.CreateUserDTO;
 import org.acme.services.management.ICitizenMgtService;
-
 import jakarta.inject.Inject;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
-
+import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/citizen")
@@ -16,6 +23,12 @@ public class CitizenResource {
 
     @Inject
     ICitizenMgtService citizenMgtService;
+
+    @POST
+    @Path("/createCitizen")
+    public Citizens createCitizen(Citizens citizens) {
+        return citizenMgtService.createCitizen(citizens);
+    }
 
     @GET
     @Path("/getAllCitizens")
@@ -32,18 +45,14 @@ public class CitizenResource {
     }
 
     @PUT
-    @Path("/updateCitizen")
+    @Path("/updateCitizen/{id}")
     public Citizens updateCitizen(@PathParam("id") int id, Citizens updatedCitizens) {
         return citizenMgtService.updateCitizen(id, updatedCitizens);
     }
 
     @DELETE
-    @Path("/deleteCitizen")
+    @Path("/deleteCitizen/{id}")
     public void deleteCitizen(@PathParam("id") int id) {
         citizenMgtService.deleteCitizen(id);
-    }
-
-    public Citizens createCitizen(Citizens citizen) {
-        return citizenMgtService.createCitizen(citizen);
     }
 }

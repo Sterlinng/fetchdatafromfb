@@ -44,6 +44,7 @@ public class Citizens {
             this.password = password;
     }
 
+
     @Override
     public String toString() {
         return "Citizens{" +

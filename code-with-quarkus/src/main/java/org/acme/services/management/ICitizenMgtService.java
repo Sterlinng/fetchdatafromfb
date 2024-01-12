@@ -13,10 +13,10 @@ public interface ICitizenMgtService {
     /**
      * Create a new citizen in the DataBase
      *
-     * @param citizens -> The citizen we want to create
+     * @param newCitizen -> The citizen we want to create
      * @return The created citizen with a valid id.
      */
-    public Citizens createCitizen(Citizens citizens);
+    public Citizens createCitizen(Citizens newCitizen);
 
     /**
      * Read a citizen by an id

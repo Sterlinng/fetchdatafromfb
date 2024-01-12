@@ -2,7 +2,6 @@ package org.acme.services.management.impl;
 
 
 import org.acme.model.Citizens;
-import org.acme.resource.api.dto.CreateUserDTO;
 import org.acme.services.management.ICitizenMgtService;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -22,9 +21,20 @@ public class CitizenMgtService implements ICitizenMgtService {
 
     @Override
     @Transactional
-    public Citizens createCitizen(CreateUserDTO NewUserDTO) {
-        entityManager.persist(citizens);
-        return citizens;
+    public Citizens createCitizen(Citizens newCitizen) {
+
+        Citizens createdCitizen = new Citizens();
+
+        createdCitizen.firstname = newCitizen.firstname;
+        createdCitizen.lastname = newCitizen.lastname;
+        createdCitizen.ZIP_code = newCitizen.ZIP_code;
+        createdCitizen.phone_number = newCitizen.phone_number;
+        createdCitizen.login = newCitizen.login;
+        createdCitizen.password = newCitizen.password;
+
+        entityManager.persist(createdCitizen);
+
+        return createdCitizen;
     }
 
     @Override
@@ -54,7 +64,7 @@ public class CitizenMgtService implements ICitizenMgtService {
             existingCitizens.level = updatedCitizens.level;
             existingCitizens.Note = updatedCitizens.Note;
         }
-        return existingCitizens;
+        return updatedCitizens;
     }
 
     @Override
@@ -65,7 +75,5 @@ public class CitizenMgtService implements ICitizenMgtService {
             entityManager.remove(citizensToDelete);
         }
     }
-
-
 
 }

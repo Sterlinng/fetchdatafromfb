@@ -15,13 +15,15 @@ public class Corporation {
     public String address;
     public String phone_number;
     public String ZIP_code;
+    public String login;
+    public String password;
 
     public Corporation(){
         
     }
 
     public Corporation(int id_corporation, String name, String Siret, String Siren, int note, 
-        String address, String phone_number, String ZIP_code){
+        String address, String phone_number, String ZIP_code, String login, String password){
             this.id_corporation = id_corporation;
             this.name = name;
             this.Siret = Siret;
@@ -30,6 +32,8 @@ public class Corporation {
             this.address = address;
             this.phone_number = phone_number;
             this.ZIP_code = ZIP_code;
+            this.login = login;
+            this.password = password;
 
     }
 }
