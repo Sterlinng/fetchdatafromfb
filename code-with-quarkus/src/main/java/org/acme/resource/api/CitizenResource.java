@@ -1,14 +1,13 @@
 package org.acme.resource.api;
+import jakarta.ws.rs.*;
 import org.acme.model.Citizens;
 import org.acme.resource.api.dto.CreateUserDTO;
 import org.acme.services.management.ICitizenMgtService;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
+
+import java.util.List;
 
 @Path("/citizen")
 @Produces(MediaType.APPLICATION_JSON)
@@ -17,15 +16,6 @@ public class CitizenResource {
 
     @Inject
     ICitizenMgtService citizenMgtService;
-
-
-    @POST
-<<<<<<< HEAD
-    @Path("/createCitizen")
-    public Citizens createCitizen(CreateUserDTO NewUserDTO) {
-        return citizenMgtService.createCitizen(NewUserDTO);
-    }
-
 
     @GET
     @Path("/getAllCitizens")
@@ -51,9 +41,9 @@ public class CitizenResource {
     @Path("/deleteCitizen")
     public void deleteCitizen(@PathParam("id") int id) {
         citizenMgtService.deleteCitizen(id);
-=======
+    }
+
     public Citizens createCitizen(Citizens citizen) {
         return citizenMgtService.createCitizen(citizen);
->>>>>>> bf21fa4229dd7191f0bcd08bd0cd99ce4cf24100
     }
 }

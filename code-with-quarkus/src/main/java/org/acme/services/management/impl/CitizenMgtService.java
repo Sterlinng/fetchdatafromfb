@@ -15,23 +15,14 @@ import java.util.List;
 @ApplicationScoped
 public class CitizenMgtService implements ICitizenMgtService {
 
-    
+
     @Inject
     EntityManager entityManager;
-    
+
 
     @Override
     @Transactional
     public Citizens createCitizen(CreateUserDTO NewUserDTO) {
-        Citizens citizens = new Citizens();
-        citizens.firstname = NewUserDTO.firstname;
-        citizens.lastname = NewUserDTO.lastname;
-        citizens.address = NewUserDTO.address;
-        citizens.ZIP_code = NewUserDTO.ZIP_code;
-        citizens.phone_number = NewUserDTO.phone_number;
-        citizens.login = NewUserDTO.login;
-        citizens.password = NewUserDTO.password;
-
         entityManager.persist(citizens);
         return citizens;
     }
