@@ -1,7 +1,6 @@
 package org.acme.services.management.impl;
 
 
-import jakarta.persistence.NoResultException;
 import org.acme.model.Citizens;
 import org.acme.resource.api.dto.CreateUserDTO;
 import org.acme.services.management.ICitizenMgtService;
@@ -56,6 +55,13 @@ public class CitizenMgtService implements ICitizenMgtService {
         if (existingCitizens != null) {
             existingCitizens.firstname = updatedCitizens.firstname;
             existingCitizens.id_citizens = updatedCitizens.id_citizens;
+            existingCitizens.lastname = updatedCitizens.lastname;
+            existingCitizens.ZIP_code = updatedCitizens.ZIP_code;
+            existingCitizens.phone_number = updatedCitizens.phone_number;
+            existingCitizens.Point = updatedCitizens.Point;
+            existingCitizens.address = updatedCitizens.address;
+            existingCitizens.level = updatedCitizens.level;
+            existingCitizens.Note = updatedCitizens.Note;
         }
         return existingCitizens;
     }
