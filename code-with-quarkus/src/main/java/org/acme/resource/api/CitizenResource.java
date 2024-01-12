@@ -1,6 +1,7 @@
 package org.acme.resource.api;
 import jakarta.ws.rs.*;
 import org.acme.model.Citizens;
+import org.acme.resource.api.dto.CreateUserDTO;
 import org.acme.services.management.ICitizenMgtService;
 
 import jakarta.inject.Inject;
@@ -16,11 +17,13 @@ public class CitizenResource {
     @Inject
     ICitizenMgtService citizenMgtService;
 
+
     @POST
     @Path("/createCitizen")
-    public Citizens createCitizen(Citizens citizens) {
-        return citizenMgtService.createCitizen(citizens);
+    public Citizens createCitizen(CreateUserDTO NewUserDTO) {
+        return citizenMgtService.createCitizen(NewUserDTO);
     }
+
 
     @GET
     @Path("/getAllCitizens")

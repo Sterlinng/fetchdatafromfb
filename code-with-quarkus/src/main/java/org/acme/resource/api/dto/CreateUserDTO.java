@@ -1,5 +1,8 @@
 package org.acme.resource.api.dto;
 
+import lombok.Data;
+
+@Data
 public class CreateUserDTO {
     
     public String firstname;

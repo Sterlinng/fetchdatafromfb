@@ -2,7 +2,9 @@ package org.acme.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Data;
 
+@Data
 @Entity
 public class Citizens {
 
@@ -17,13 +19,17 @@ public class Citizens {
     public int level;
     public int Note;
 
+    public String login;
+
+    public String password;
+
     public Citizens(){
         
     }
 
     public Citizens(
         int id_citizens, String firstname, String lastname, String ZIP_code, String phone_number,
-        String Point, String address, int level, int Note) {
+        String Point, String address, int level, int Note, String login, String password) {
 
             this.id_citizens = id_citizens;
             this.firstname = firstname;
@@ -34,6 +40,8 @@ public class Citizens {
             this.Point = Point;
             this.Note = Note;
             this.level = level;
+            this.login = login;
+            this.password = password;
     }
 
     @Override

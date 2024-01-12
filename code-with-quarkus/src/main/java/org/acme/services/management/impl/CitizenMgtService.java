@@ -3,6 +3,7 @@ package org.acme.services.management.impl;
 
 import jakarta.persistence.NoResultException;
 import org.acme.model.Citizens;
+import org.acme.resource.api.dto.CreateUserDTO;
 import org.acme.services.management.ICitizenMgtService;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -22,7 +23,16 @@ public class CitizenMgtService implements ICitizenMgtService {
 
     @Override
     @Transactional
-    public Citizens createCitizen(Citizens citizens) {
+    public Citizens createCitizen(CreateUserDTO NewUserDTO) {
+        Citizens citizens = new Citizens();
+        citizens.firstname = NewUserDTO.firstname;
+        citizens.lastname = NewUserDTO.lastname;
+        citizens.address = NewUserDTO.address;
+        citizens.ZIP_code = NewUserDTO.ZIP_code;
+        citizens.phone_number = NewUserDTO.phone_number;
+        citizens.login = NewUserDTO.login;
+        citizens.password = NewUserDTO.password;
+
         entityManager.persist(citizens);
         return citizens;
     }

@@ -9,35 +9,39 @@
 
     <h2>Formulaire d'inscription</h2>
 
-    <form action="/submit" method="post">
-        <!-- Champ Nom -->
+    <form action="/citizen/createCitizen" method="post">
+
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+        <input type="text" id="nom" name="lastname" required>
         <br>
 
-        <!-- Champ Prénom -->
         <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" required>
+        <input type="text" id="prenom" name="firstname" required>
         <br>
 
-        <!-- Champ Adresse -->
-        <label for="address">Adresse</label>
+        <label for="address">Adresse :</label>
         <input type="text" id="address" name="address" required>
         <br>
 
-        <!-- Champ Code Postal -->
-        <label for="ZIP_Code">Code postal</label>
+        <label for="ZIP_Code">Code postal :</label>
         <input type="text" id="ZIP_Code" name="ZIP_code" required>
         <br>
 
-        <!-- Champ Numéro de téléphone -->
-        <label for="phone_number">Numéro de téléphone</label>
+        <label for="phone_number">Numéro de téléphone :</label>
         <input type="text" id="phone_number" name="phone_number" required>
         <br>
 
-        <!-- Bouton de soumission -->
+        <label for="login">Login :</label>
+        <input type="text" id="login" name="login" required>
+        <br>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
         <input type="submit" value="S'inscrire">
     </form>
+
 
 </body>
 </html>
