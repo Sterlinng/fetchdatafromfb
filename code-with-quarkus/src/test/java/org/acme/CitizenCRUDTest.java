@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -20,7 +21,6 @@ public class CitizenCRUDTest {
     @Test
     public void testCreateCitizen() {
         Citizens citizen = new Citizens();
-        citizen.id_citizens = 3;
         citizen.firstname = "Amine";
         citizen.lastname = "FODIL-CHERIF";
         citizen.ZIP_code = "33700";
@@ -34,5 +34,11 @@ public class CitizenCRUDTest {
         Citizens newCtiz = svc.createCitizen(citizen);
 
         assertNotNull(newCtiz);
+    }
+
+    @Test
+    @Disabled
+    public void testDeleteCitizen() {
+        svc.deleteCitizen(2);
     }
 }

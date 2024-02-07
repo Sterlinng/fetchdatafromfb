@@ -1,6 +1,8 @@
 package org.acme.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -9,6 +11,7 @@ import lombok.Data;
 public class Citizens {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id_citizens;
     public String lastname;
     public String firstname;
