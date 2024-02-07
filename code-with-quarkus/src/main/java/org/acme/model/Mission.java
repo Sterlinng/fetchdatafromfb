@@ -19,6 +19,8 @@ public class Mission {
     public Time beginning_hour;
     public Time end_hour;
     public String description;
+    // public Category category;
+    
 
     public Mission(){
         

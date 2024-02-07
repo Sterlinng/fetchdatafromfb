@@ -1,5 +1,4 @@
 package org.acme.resource.api;
-import jakarta.ws.rs.*;
 import java.util.List;
 import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
@@ -13,8 +12,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import java.util.List;
+
 
 @Path("/citizen")
 @Produces(MediaType.APPLICATION_JSON)
