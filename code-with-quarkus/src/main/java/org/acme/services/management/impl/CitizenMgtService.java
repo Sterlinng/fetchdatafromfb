@@ -31,6 +31,11 @@ public class CitizenMgtService implements ICitizenMgtService {
         createdCitizen.phone_number = newCitizen.phone_number;
         createdCitizen.login = newCitizen.login;
         createdCitizen.password = newCitizen.password;
+        createdCitizen.address = newCitizen.address;
+        createdCitizen.Note = newCitizen.Note;
+        createdCitizen.Point = newCitizen.Point;
+        createdCitizen.id_citizens = newCitizen.id_citizens;
+        createdCitizen.level = newCitizen.level;
 
         entityManager.persist(createdCitizen);
 

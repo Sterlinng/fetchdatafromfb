@@ -6,6 +6,7 @@ C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\State.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\dto\ConsultationMissionDTO.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\impl\CitizenMgtService.java
+C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\INoticeMgtService.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\ICitizenMgtService.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\Give.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\dto\CreateUserDTO.java
@@ -21,6 +22,7 @@ C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\Corporation.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\Send.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\model\Notice.java
+C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\services\management\impl\NoticeMgtService.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\dto\SubscribeMissionDTO.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\dto\ListMissionDTO.java
 C:\Users\amine\Desktop\CESI\fetchdatafromfb\code-with-quarkus\src\main\java\org\acme\resource\api\CitizenResource.java
