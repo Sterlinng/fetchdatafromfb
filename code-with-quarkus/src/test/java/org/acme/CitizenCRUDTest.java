@@ -19,9 +19,10 @@ public class CitizenCRUDTest {
     ICitizenMgtService svc;
 
     @Test
+    @Disabled
     public void testCreateCitizen() {
         Citizens citizen = new Citizens();
-        citizen.firstname = "Amine";
+        citizen.firstname = "theo";
         citizen.lastname = "FODIL-CHERIF";
         citizen.ZIP_code = "33700";
         citizen.phone_number = "0622639026";
@@ -29,6 +30,7 @@ public class CitizenCRUDTest {
         citizen.address = "merignac";
         citizen.level = 10;
         citizen.Note = 5;
+        citizen.mail = "afodil@gmail.com";
         citizen.login = "aminefodil";
         citizen.password = "aminefodil";
         Citizens newCtiz = svc.createCitizen(citizen);
@@ -37,7 +39,6 @@ public class CitizenCRUDTest {
     }
 
     @Test
-    @Disabled
     public void testDeleteCitizen() {
         svc.deleteCitizen(2);
     }

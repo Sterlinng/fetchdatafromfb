@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="firstname">Prénom:</label>
+        <input type="text" id="firstname" name="firstname" [(ngModel)]="citizen.firstname" required>
+      </div>
+  <div>
+    <label for="lastname">Nom de famille:</label>
+    <input type="text" id="lastname" [(ngModel)]="citizen.lastname" name="lastname" required>
+  </div>
+  <div>
+    <label for="ZIP_code">Code postal:</label>
+    <input type="text" id="ZIP_code" [(ngModel)]="citizen.ZIP_code"  name="ZIP_code" required>
+  </div>
+  <div>
+    <label for="phone_number">Numéro de téléphone:</label>
+    <input type="text" id="phone_number" [(ngModel)]="citizen.phone_number" name="phone_number" required>
+  </div>
+  <div>
+    <label for="mail">mail:</label>
+    <input type="text" id="mail" [(ngModel)]="citizen.mail" name="mail" required>
+  </div>
+  <div>
+    <label for="Login">pseudo:</label>
+    <input type="text" id="login" [(ngModel)]="citizen.login" name="login">
+  </div>
+  <div>
+    <label for="address">Adresse:</label>
+    <input type="text" id="address" [(ngModel)]="citizen.address" name="address" required>
+  </div>
+  <div>
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" [(ngModel)]="citizen.password" name="password" required>
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>

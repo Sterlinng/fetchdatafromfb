@@ -24,6 +24,7 @@ public class CitizenResource {
 
     @POST
     @Path("/createCitizen")
+    @Consumes(MediaType.APPLICATION_JSON)
     public Citizens createCitizen(Citizens citizens) {
         return citizenMgtService.createCitizen(citizens);
     }

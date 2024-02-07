@@ -1,9 +1,12 @@
 package org.acme.model;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 
 @Data
@@ -13,6 +16,7 @@ public class Citizens {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id_citizens;
+    
     public String lastname;
     public String firstname;
     public String ZIP_code;
@@ -21,6 +25,7 @@ public class Citizens {
     public String address;
     public int level;
     public int Note;
+    public String mail;
 
     public String login;
 
@@ -32,7 +37,7 @@ public class Citizens {
 
     public Citizens(
         int id_citizens, String firstname, String lastname, String ZIP_code, String phone_number,
-        String Point, String address, int level, int Note, String login, String password) {
+        String Point, String address, int level, int Note, String login, String password, String mail) {
 
             this.id_citizens = id_citizens;
             this.firstname = firstname;
@@ -44,6 +49,7 @@ public class Citizens {
             this.Note = Note;
             this.level = level;
             this.login = login;
+            this.mail = mail;
             this.password = password;
     }
 

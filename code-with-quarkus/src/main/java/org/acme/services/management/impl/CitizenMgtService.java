@@ -36,6 +36,7 @@ public class CitizenMgtService implements ICitizenMgtService {
         createdCitizen.Point = newCitizen.Point;
         createdCitizen.id_citizens = newCitizen.id_citizens;
         createdCitizen.level = newCitizen.level;
+        createdCitizen.mail = newCitizen.mail;
 
         entityManager.persist(createdCitizen);
 
