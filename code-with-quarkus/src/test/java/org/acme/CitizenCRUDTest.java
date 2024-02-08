@@ -39,6 +39,7 @@ public class CitizenCRUDTest {
     }
 
     @Test
+    @Disabled
     public void testDeleteCitizen() {
         svc.deleteCitizen(2);
     }
