@@ -37,10 +37,4 @@ public class CitizenCRUDTest {
 
         assertNotNull(newCtiz);
     }
-
-    @Test
-    @Disabled
-    public void testDeleteCitizen() {
-        svc.deleteCitizen(2);
-    }
 }

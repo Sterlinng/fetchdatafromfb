@@ -1,2 +1,5 @@
+org\acme\resource\api\CorporationRessource.class
+org\acme\services\management\impl\NoticeMgtService.class
 org\acme\services\management\ICorporationMgtService.class
 org\acme\services\management\impl\CorporationMgtService.class
+org\acme\services\management\INoticeMgtService.class

@@ -1,16 +1,15 @@
 package org.acme.services.management.impl;
 
 import java.util.List;
-
-import org.acme.model.Citizens;
 import org.acme.model.Corporation;
 import org.acme.services.management.ICorporationMgtService;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
-
+@ApplicationScoped
 public class CorporationMgtService implements ICorporationMgtService {
     
     

@@ -17,7 +17,6 @@ public class CorporationCRUDTest {
     ICorporationMgtService testCorp;
 
     @Test
-    @Disabled
     public void testCreateCorporation() {
         Corporation corporation = new Corporation();
         corporation.name = "theo";
