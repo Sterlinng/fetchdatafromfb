@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Nom:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="corporation.name" required>
+  </div>
+  <div>
+    <label for="Siret">Siret:</label>
+    <input type="text" id="Siret" name="Siret" [(ngModel)]="corporation.Siret" required>
+  </div>
+  <div>
+    <label for="Siren">Siren:</label>
+    <input type="text" id="Siren" name="Siren" [(ngModel)]="corporation.Siren" required>
+  </div>
+  <div>
+    <label for="mail">Mail:</label>
+    <input type="text" id="mail" name="mail" [(ngModel)]="corporation.mail" required>
+  </div>
+  <div>
+    <label for="note">Note:</label>
+    <input type="number" id="note" name="note" [(ngModel)]="corporation.note">
+  </div>
+  <div>
+    <label for="address">Adresse:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="corporation.address" required>
+  </div>
+  <div>
+    <label for="phone_number">Numéro de téléphone:</label>
+    <input type="text" id="phone_number" name="phone_number" [(ngModel)]="corporation.phone_number" required>
+  </div>
+  <div>
+    <label for="ZIP_code">Code postal:</label>
+    <input type="text" id="ZIP_code" name="ZIP_code" [(ngModel)]="corporation.ZIP_code" required>
+  </div>
+  <div>
+    <label for="login">Pseudo:</label>
+    <input type="text" id="login" name="login" [(ngModel)]="corporation.login">
+  </div>
+  <div>
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="corporation.password" required>
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>

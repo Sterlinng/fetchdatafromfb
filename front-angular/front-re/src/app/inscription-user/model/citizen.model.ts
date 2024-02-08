@@ -10,7 +10,7 @@ export class Citizens {
     login?: string; // Si nécessaire
     mail: string;
     password: string;
-  
+
     constructor(
       firstname: string,
       lastname: string,
@@ -37,4 +37,3 @@ export class Citizens {
       this.mail = mail; // Notez que l'initialisation de l'ID à 0 peut ne pas être nécessaire si votre backend attribue un ID.
     }
   }
-  
