@@ -3,6 +3,7 @@ package org.acme.services.management.impl;
 
 import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
+import org.mindrot.jbcrypt.BCrypt;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -30,7 +31,7 @@ public class CitizenMgtService implements ICitizenMgtService {
         createdCitizen.ZIP_code = newCitizen.ZIP_code;
         createdCitizen.phone_number = newCitizen.phone_number;
         createdCitizen.login = newCitizen.login;
-        createdCitizen.password = newCitizen.password;
+        createdCitizen.password = BCrypt.hashpw(newCitizen.password, BCrypt.gensalt());
         createdCitizen.address = newCitizen.address;
         createdCitizen.Note = newCitizen.Note;
         createdCitizen.Point = newCitizen.Point;
@@ -79,6 +80,19 @@ public class CitizenMgtService implements ICitizenMgtService {
         Citizens citizensToDelete = entityManager.find(Citizens.class, citizenId);
         if (citizensToDelete != null) {
             entityManager.remove(citizensToDelete);
+        }
+    }
+
+    @Override
+    @Transactional
+    public Citizens authenticateCitizen(String login, String password) {
+        Citizens citizen = entityManager.createQuery("SELECT c FROM Citizens c WHERE c.login = :login", Citizens.class)
+                                         .setParameter("login", login)
+                                         .getSingleResult();
+        if (citizen != null && BCrypt.checkpw(password, citizen.getPassword())) {
+            return citizen;
+        } else {
+            return null;
         }
     }
 
