@@ -1,5 +1,5 @@
 <!-- connexion-user.component.html -->
-<form (ngSubmit)="onLogin()">
+<form *ngIf="!isLoggedIn; else logoutForm" (ngSubmit)="onLogin()">
   <div>
     <label for="login">Pseudo:</label>
     <input type="text" id="login" [(ngModel)]="user.login" name="login" required>
@@ -10,3 +10,7 @@
   </div>
   <button type="submit">Se connecter</button>
 </form>
+
+<ng-template #logoutForm>
+  <button (click)="onLogout()">Se déconnecter</button>
+</ng-template>
