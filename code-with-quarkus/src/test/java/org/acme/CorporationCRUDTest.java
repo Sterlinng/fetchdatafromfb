@@ -4,7 +4,6 @@ import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.acme.model.Corporation;
 import org.acme.services.management.ICorporationMgtService;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 

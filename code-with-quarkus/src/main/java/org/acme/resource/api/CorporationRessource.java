@@ -3,9 +3,7 @@ package org.acme.resource.api;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import org.acme.model.Citizens;
 import org.acme.model.Corporation;
-import org.acme.services.management.ICitizenMgtService;
 import org.acme.services.management.ICorporationMgtService;
 
 import java.util.List;
