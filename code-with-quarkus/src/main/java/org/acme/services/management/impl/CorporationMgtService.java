@@ -1,25 +1,40 @@
 package org.acme.services.management.impl;
 
 import java.util.List;
-
 import org.acme.model.Corporation;
 import org.acme.services.management.ICorporationMgtService;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
-
+@ApplicationScoped
 public class CorporationMgtService implements ICorporationMgtService {
     
     
     @Inject
     EntityManager entityManager;
 
+    @Override
     @Transactional
-    public Corporation createCorporation(Corporation corporation) {
-        entityManager.persist(corporation);
-        return corporation;
+    public Corporation createCorporation(Corporation newCorporation) {
+
+        Corporation createdCorporation = new Corporation();
+
+        createdCorporation.name = newCorporation.name;
+        createdCorporation.Siret = newCorporation.Siret;
+        createdCorporation.Siren = newCorporation.Siren;
+        createdCorporation.mail = newCorporation.mail;
+        createdCorporation.note = newCorporation.note;
+        createdCorporation.address = newCorporation.address;
+        createdCorporation.phone_number = newCorporation.phone_number;
+        createdCorporation.ZIP_code = newCorporation.ZIP_code;
+        createdCorporation.login = newCorporation.login;
+        createdCorporation.password = newCorporation.password;
+
+        entityManager.persist(newCorporation);
+        return newCorporation;
     }
 
     @Transactional

@@ -45,6 +45,8 @@ public interface ICitizenMgtService {
      * @return None
      */
     public void deleteCitizen(Integer citizenId);
+
+    public Citizens authenticateCitizen(String login, String password);
     
 
 }

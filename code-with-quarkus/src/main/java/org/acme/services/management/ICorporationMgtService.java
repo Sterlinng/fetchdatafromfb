@@ -2,8 +2,12 @@ package org.acme.services.management;
 
 import java.util.List;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import org.acme.model.Corporation;
 
+
+
+@ApplicationScoped
 public interface ICorporationMgtService {
     
 
