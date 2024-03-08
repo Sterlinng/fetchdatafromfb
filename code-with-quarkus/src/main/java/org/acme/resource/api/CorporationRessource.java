@@ -8,6 +8,9 @@ import org.acme.services.management.ICorporationMgtService;
 
 import java.util.List;
 
+@Path("/corporation")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class CorporationRessource {
 
     @Inject
