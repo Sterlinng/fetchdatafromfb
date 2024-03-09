@@ -1,35 +1,40 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-        <label for="firstname">Prénom:</label>
-        <input type="text" id="firstname" name="firstname" [(ngModel)]="citizen.firstname" required>
+<div class="backoulou">
+  <div class="container">
+    <h2 class="inscription-title">Inscription</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label class="fr-label" for="firstname"></label>
+        <input class="fr-input" type="text" id="firstname" name="firstname"  placeholder='Prénom' [(ngModel)]="citizen.firstname" required>
       </div>
-  <div>
-    <label for="lastname">Nom de famille:</label>
-    <input type="text" id="lastname" [(ngModel)]="citizen.lastname" name="lastname" required>
+      <div>
+        <label class="fr-label" for="lastname"></label>
+        <input class="fr-input" type="text" id="lastname" [(ngModel)]="citizen.lastname" name="lastname" placeholder="Nom" required>
+      </div>
+      <div>
+        <label class="fr-label" for="ZIP_code"></label>
+        <input class="fr-input" type="text" id="ZIP_code" [(ngModel)]="citizen.ZIP_code"  name="ZIP_code" placeholder='Code postal' required>
+      </div>
+      <div>
+        <label class="fr-label" for="phone_number"></label>
+        <input class="fr-input" type="text" id="phone_number" [(ngModel)]="citizen.phone_number" name="phone_number" placeholder='Numéro de téléphone' required>
+      </div>
+      <div>
+        <label class="fr-label"for="mail"></label>
+        <input class="fr-input" type="email" id="mail" [(ngModel)]="citizen.mail" name="mail" placeholder='Mail' required>
+      </div>
+      <div >
+        <label class="fr-label" for="address"></label>
+        <input class="fr-input" type="text" id="address" [(ngModel)]="citizen.address" name="address" placeholder='Adresse' required>
+      </div>
+      <div>
+        <label class="fr-label" for="Login"></label>
+        <input class="fr-input" type="text" id="login" [(ngModel)]="citizen.login" name="login" placeholder='Pseudo' required>
+      </div>
+      <div>
+        <label class="fr-label" for="password"></label>
+        <input class="fr-input" type="password" id="password" [(ngModel)]="citizen.password" name="password" placeholder='Mot de passe' required>
+      </div>
+      <button type="submit" class="btn">Enregistrer</button>
+    </form>
   </div>
-  <div>
-    <label for="ZIP_code">Code postal:</label>
-    <input type="text" id="ZIP_code" [(ngModel)]="citizen.ZIP_code"  name="ZIP_code" required>
-  </div>
-  <div>
-    <label for="phone_number">Numéro de téléphone:</label>
-    <input type="text" id="phone_number" [(ngModel)]="citizen.phone_number" name="phone_number" required>
-  </div>
-  <div>
-    <label for="mail">mail:</label>
-    <input type="email" id="mail" [(ngModel)]="citizen.mail" name="mail" required>
-  </div>
-  <div>
-    <label for="Login">pseudo:</label>
-    <input type="text" id="login" [(ngModel)]="citizen.login" name="login">
-  </div>
-  <div>
-    <label for="address">Adresse:</label>
-    <input type="text" id="address" [(ngModel)]="citizen.address" name="address" required>
-  </div>
-  <div>
-    <label for="password">Mot de passe:</label>
-    <input type="password" id="password" [(ngModel)]="citizen.password" name="password" required>
-  </div>
-  <button type="submit">Enregistrer</button>
-</form>
+</div>
