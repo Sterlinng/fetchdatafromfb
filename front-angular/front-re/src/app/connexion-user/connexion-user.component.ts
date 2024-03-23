@@ -51,4 +51,10 @@ export class ConnexionUserComponent implements OnInit {
     console.log('Redirection vers la page de connexion');
     this.isLoggedIn = false; // Mise à jour de l'état de connexion
   }
+
+  redirectToChoixPage(): void {
+    this.router.navigate(['/choix']);
+  }
+
 }
+
