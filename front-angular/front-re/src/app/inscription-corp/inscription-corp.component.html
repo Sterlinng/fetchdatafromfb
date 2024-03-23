@@ -1,0 +1,44 @@
+<div class="backoulou">
+  <div class="container">
+    <h2 class="inscription-title">Inscription</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label class="fr-label" for="name"></label>
+        <input class="fr-input" type="text" id="name" name="name"  placeholder='Nom' [(ngModel)]="corporation.name" required>
+      </div>
+      <div>
+        <label class="fr-label" for="Siret"></label>
+        <input class="fr-input" type="text" id="Siret" [(ngModel)]="corporation.Siret" name="Siret" placeholder="Siret" required>
+      </div>
+      <div>
+        <label class="fr-label" for="Siren"></label>
+        <input class="fr-input" type="text" id="Siren" [(ngModel)]="corporation.Siren"  name="Siren" placeholder='Siren' required>
+      </div>
+      <div>
+        <label class="fr-label" for="mail"></label>
+        <input class="fr-input" type="text" id="mail" [(ngModel)]="corporation.mail" name="mail" placeholder='Mail' required>
+      </div>
+      <div>
+        <label class="fr-label"for="address"></label>
+        <input class="fr-input" type="email" id="address" [(ngModel)]="corporation.address" name="address" placeholder='Address' required>
+      </div>
+      <div >
+        <label class="fr-label" for="phone_number"></label>
+        <input class="fr-input" type="text" id="phone_number" [(ngModel)]="corporation.phone_number" name="phone_number" placeholder='Numéro' required>
+      </div>
+      <div>
+        <label class="fr-label" for="ZIP_code"></label>
+        <input class="fr-input" type="text" id="ZIP_code" [(ngModel)]="corporation.ZIP_code" name="ZIP_code" placeholder='Code Postal' required>
+      </div>
+      <div>
+        <label class="fr-label" for="login"></label>
+        <input class="fr-input" type="text" id="login" [(ngModel)]="corporation.login" name="login" placeholder='Login' required>
+      </div>
+      <div>
+        <label class="fr-label" for="password"></label>
+        <input class="fr-input" type="password" id="password" [(ngModel)]="corporation.password" name="password" placeholder='Mot de passe' required>
+      </div>
+      <button type="submit" class="btn">Enregistrer</button>
+    </form>
+  </div>
+</div>
