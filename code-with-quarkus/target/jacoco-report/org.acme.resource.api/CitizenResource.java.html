@@ -1,51 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CitizenResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CitizensCRUDTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">org.acme.resource.api</a> &gt; <span class="el_source">CitizenResource.java</span></div><h1>CitizenResource.java</h1><pre class="source lang-java linenums">package org.acme.resource.api;
-import jakarta.ws.rs.*;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CitizenResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CitizenCRUDTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">org.acme.resource.api</a> &gt; <span class="el_source">CitizenResource.java</span></div><h1>CitizenResource.java</h1><pre class="source lang-java linenums">package org.acme.resource.api;
+import java.util.List;
 import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
-
 import jakarta.inject.Inject;
+import jakarta.persistence.NoResultException;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 
-import java.util.List;
+import java.security.Key;
+import java.util.Date;
 
 @Path(&quot;/citizen&quot;)
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-<span class="nc" id="L14">public class CitizenResource {</span>
+<span class="nc" id="L27">public class CitizenResource {</span>
 
     @Inject
     ICitizenMgtService citizenMgtService;
 
     @POST
     @Path(&quot;/createCitizen&quot;)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Citizens createCitizen(Citizens citizens) {
-<span class="nc" id="L22">        return citizenMgtService.createCitizen(citizens);</span>
+<span class="nc" id="L36">        return citizenMgtService.createCitizen(citizens);</span>
     }
 
     @GET
     @Path(&quot;/getAllCitizens&quot;)
     public List&lt;Citizens&gt; getAllCitizens() {
-<span class="nc" id="L28">        return citizenMgtService.getAllCitizens();</span>
+<span class="nc" id="L42">        return citizenMgtService.getAllCitizens();</span>
     }
 
     @GET
     @Path(&quot;/getCitizenById/{id}&quot;)
     public Citizens getCitizenById(@PathParam(&quot;id&quot;) int id) {
-<span class="nc" id="L34">        Citizens citizen = citizenMgtService.getCitizenById(id);</span>
-<span class="nc" id="L35">        System.out.println(citizen);</span>
-<span class="nc" id="L36">        return citizen;</span>
+<span class="nc" id="L48">        Citizens citizen = citizenMgtService.getCitizenById(id);</span>
+<span class="nc" id="L49">        System.out.println(citizen);</span>
+<span class="nc" id="L50">        return citizen;</span>
     }
 
     @PUT
-    @Path(&quot;/updateCitizen&quot;)
+    @Path(&quot;/updateCitizen/{id}&quot;)
     public Citizens updateCitizen(@PathParam(&quot;id&quot;) int id, Citizens updatedCitizens) {
-<span class="nc" id="L42">        return citizenMgtService.updateCitizen(id, updatedCitizens);</span>
+<span class="nc" id="L56">        return citizenMgtService.updateCitizen(id, updatedCitizens);</span>
     }
 
     @DELETE
-    @Path(&quot;/deleteCitizen&quot;)
+    @Path(&quot;/deleteCitizen/{id}&quot;)
     public void deleteCitizen(@PathParam(&quot;id&quot;) int id) {
-<span class="nc" id="L48">        citizenMgtService.deleteCitizen(id);</span>
-<span class="nc" id="L49">    }</span>
+<span class="nc" id="L62">        citizenMgtService.deleteCitizen(id);</span>
+<span class="nc" id="L63">    }</span>
+
+    @POST
+    @Path(&quot;/authenticate&quot;)
+    public Response authenticateUser(Citizens credentials) {
+        try {
+<span class="nc" id="L69">            Citizens citizen = citizenMgtService.authenticateCitizen(credentials.getLogin(), credentials.getPassword());</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            if (citizen != null) {</span>
+                // Générer un token JWT (ou autre mécanisme de session) ici
+<span class="nc" id="L72">                String token = generateToken(citizen);</span>
+<span class="nc" id="L73">                return Response.ok().entity(token).build();</span>
+            } else {
+<span class="nc" id="L75">                return Response.status(Response.Status.UNAUTHORIZED).build();</span>
+            }
+<span class="nc" id="L77">        } catch (NoResultException e) {</span>
+<span class="nc" id="L78">            return Response.status(Response.Status.UNAUTHORIZED).build();</span>
+        }
+    }
+
+    private String generateToken(Citizens citizen) {
+<span class="nc" id="L83">    long currentTimeMillis = System.currentTimeMillis();</span>
+    
+    // Générer une clé sécurisée pour HS256
+<span class="nc" id="L86">    Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);</span>
+
+<span class="nc" id="L88">    return Jwts.builder()</span>
+<span class="nc" id="L89">            .setSubject(citizen.getLogin())</span>
+<span class="nc" id="L90">            .setIssuedAt(new Date(currentTimeMillis))</span>
+<span class="nc" id="L91">            .setExpiration(new Date(currentTimeMillis + 3600000))</span>
+<span class="nc" id="L92">            .signWith(key)</span>
+<span class="nc" id="L93">            .compact();</span>
+}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -3,7 +3,6 @@ org\acme\model\State.class
 org\acme\model\Interact.class
 org\acme\resource\api\dto\ConnectionUserDTO.class
 org\acme\resource\api\dto\SubscribeMissionDTO.class
-org\acme\services\management\IOrganizationMgtService.class
 org\acme\resource\api\dto\ConsultationMissionDTO.class
 org\acme\resource\api\dto\CreateCorporationDTO.class
 org\acme\services\management\IMissionMgtService.class
@@ -21,6 +20,5 @@ org\acme\model\Citizens.class
 org\acme\model\Notice.class
 org\acme\resource\api\dto\UserNameDTO.class
 org\acme\model\Give.class
-org\acme\services\management\impl\OrganizationMgtService.class
 org\acme\services\management\impl\MissionMgtService.class
 org\acme\model\Certificate.class

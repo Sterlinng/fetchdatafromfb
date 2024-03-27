@@ -1,7 +1,12 @@
 package org.acme.resource.api;
 import java.util.List;
+import java.util.Map;
+
 import org.acme.model.Citizens;
 import org.acme.services.management.ICitizenMgtService;
+
+import com.google.gson.Gson;
+
 import jakarta.inject.Inject;
 import jakarta.persistence.NoResultException;
 import jakarta.ws.rs.POST;
@@ -20,6 +25,7 @@ import io.jsonwebtoken.security.Keys;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 
 @Path("/citizen")
 @Produces(MediaType.APPLICATION_JSON)
@@ -68,9 +74,15 @@ public class CitizenResource {
         try {
             Citizens citizen = citizenMgtService.authenticateCitizen(credentials.getLogin(), credentials.getPassword());
             if (citizen != null) {
-                // Générer un token JWT (ou autre mécanisme de session) ici
                 String token = generateToken(citizen);
-                return Response.ok().entity(token).build();
+
+                Map<String, Object> responseObj = new HashMap<>();
+                responseObj.put("token", token);
+                responseObj.put("id", citizen.id_citizens);
+
+                String jsonResponse = new Gson().toJson(responseObj);
+
+                return Response.ok().entity(jsonResponse).header("Content-Type", "application/json").build();
             } else {
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
@@ -78,6 +90,7 @@ public class CitizenResource {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
     }
+
 
     private String generateToken(Citizens citizen) {
     long currentTimeMillis = System.currentTimeMillis();

@@ -1,8 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MissionMgtService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CitizensCRUDTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">org.acme.services.management.impl</a> &gt; <span class="el_source">MissionMgtService.java</span></div><h1>MissionMgtService.java</h1><pre class="source lang-java linenums">package org.acme.services.management.impl;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MissionMgtService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CitizenCRUDTest (QuarkusTest)</a> &gt; <a href="index.source.html" class="el_package">org.acme.services.management.impl</a> &gt; <span class="el_source">MissionMgtService.java</span></div><h1>MissionMgtService.java</h1><pre class="source lang-java linenums">package org.acme.services.management.impl;
 
+import java.util.List;
+
+import org.acme.model.Mission;
 import org.acme.services.management.IMissionMgtService;
 
-<span class="nc" id="L5">public class MissionMgtService implements IMissionMgtService{</span>
-    
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
+
+<span class="nc" id="L12">public class MissionMgtService implements IMissionMgtService{</span>
+    @Inject
+    EntityManager entityManager;
+
+    @Override
+    @Transactional
+    public Mission createMission(Mission mission) {
+<span class="nc" id="L19">        entityManager.persist(mission);</span>
+<span class="nc" id="L20">        return mission;</span>
+    }
+
+    @Override
+    @Transactional
+    public Mission getMissionById(int missionId) {
+<span class="nc" id="L26">        return entityManager.find(Mission.class, missionId);</span>
+    }
+
+    @Override
+    @Transactional
+    public List&lt;Mission&gt; getAllMissions() {
+<span class="nc" id="L32">        return entityManager.createQuery(&quot;SELECT m FROM Mission m&quot;, Mission.class).getResultList();</span>
+    }
+
+    @Override
+    @Transactional
+    public Mission updateMission(int missionId, Mission updatedMission) {
+<span class="nc" id="L38">        Mission existingMission = entityManager.find(Mission.class, missionId);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        if (existingMission != null) {</span>
+<span class="nc" id="L40">            existingMission.wording = updatedMission.wording;</span>
+<span class="nc" id="L41">            existingMission.date_mission = updatedMission.date_mission;</span>
+<span class="nc" id="L42">            existingMission.name = updatedMission.name;</span>
+<span class="nc" id="L43">            existingMission.note = updatedMission.note;</span>
+<span class="nc" id="L44">            existingMission.ZIP_code = updatedMission.ZIP_code;</span>
+<span class="nc" id="L45">            existingMission.address = updatedMission.address;</span>
+<span class="nc" id="L46">            existingMission.beginning_hour = updatedMission.beginning_hour;</span>
+<span class="nc" id="L47">            existingMission.end_hour = updatedMission.end_hour;</span>
+<span class="nc" id="L48">            existingMission.description = updatedMission.description;</span>
+        }
+<span class="nc" id="L50">        return existingMission;</span>
+    }
+
+    @Override
+    @Transactional
+    public void deleteMission(int missionId) {
+<span class="nc" id="L56">        Mission missionToDelete = entityManager.find(Mission.class, missionId);</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        if (missionToDelete != null) {</span>
+<span class="nc" id="L58">            entityManager.remove(missionToDelete);</span>
+        }
+<span class="nc" id="L60">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
