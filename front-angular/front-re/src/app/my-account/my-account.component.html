@@ -40,5 +40,8 @@
             <input class="fr-input" type="text" id="phone" [(ngModel)]="citizen.zip_code" [readonly]="!isEditing">
         </div>
     </div>
-    <button class="fr-btn delete-account-btn" (click)="deleteAccount()">Supprimer le compte</button>
+    <div style="text-align: center;"> <!-- Centre le bouton -->
+        <button class="fr-btn" (click)="downloadPDF()">Obtenir mon certificat</button>
+    </div>
 </div>
+<button class="fr-btn delete-account-btn" (click)="deleteAccount()">Supprimer le compte</button>

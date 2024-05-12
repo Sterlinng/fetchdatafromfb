@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: 'inscription-corp', component: InscriptionCorpComponent },
     { path: 'inscription-user', component: InscriptionUserComponent },
     { path: 'connexion-user', component: ConnexionUserComponent },
-    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'choix', component: ChoixComponent },
     { path: 'account', component: MyAccountComponent },
 ];

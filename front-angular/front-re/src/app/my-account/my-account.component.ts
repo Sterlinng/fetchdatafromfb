@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { PDFDocument, rgb } from 'pdf-lib';
+import { saveAs } from 'file-saver';
 
 
 @Component({
@@ -17,7 +19,60 @@ export class MyAccountComponent implements OnInit {
   citizen: any = {};
   isEditing: boolean = false;
 
+  certificatImagePath = '../../assets/certificat.pdf';
+
   constructor(private http: HttpClient, private router: Router) { }
+
+  async downloadPDF(): Promise<void> {
+    const pdfPath = this.certificatImagePath;
+    const existingPdfBytes = await fetch(pdfPath).then((res) => res.arrayBuffer());
+    const pdfDoc = await PDFDocument.load(existingPdfBytes);
+    const page = pdfDoc.getPage(0);
+
+    const fontSize = 12;
+    const textColor = rgb(0, 0, 0);
+
+    page.drawText(this.citizen.firstname + " " + this.citizen.lastname, {
+      x: 250,
+      y: 392,
+      size: fontSize,
+      color: textColor,
+    });
+    const todayDate = new Date().toLocaleDateString();
+    page.drawText(todayDate, {
+      x: 265,
+      y: 375,
+      size: fontSize,
+      color: textColor,
+    });
+
+    page.drawText(this.citizen.level.toString(), {
+      x: 360,
+      y: 280,
+      size: 40,
+      color: textColor,
+    });
+
+    page.drawText(todayDate, {
+      x: 380,
+      y: 76,
+      size: fontSize,
+      color: textColor,
+    });
+
+    page.drawText("Bordeaux", {
+      x: 260,
+      y: 76,
+      size: fontSize,
+      color: textColor,
+    });
+
+    
+
+    const pdfBytes = await pdfDoc.save();
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    saveAs(blob, 'certificat.pdf');
+  }
   
 
   ngOnInit(): void {
@@ -44,7 +99,6 @@ export class MyAccountComponent implements OnInit {
           },
           error: (error) => {
             console.error('Error updating citizen:', error);
-            // Gérez les erreurs ici
           }
         });
     }
