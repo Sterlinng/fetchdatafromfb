@@ -5,10 +5,12 @@ import java.util.List;
 import org.acme.model.Notice;
 import org.acme.services.management.INoticeMgtService;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
+@ApplicationScoped
 public class NoticeMgtService implements INoticeMgtService {
     @Inject
     EntityManager entityManager;

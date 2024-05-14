@@ -86,14 +86,13 @@ public class CitizenMgtService implements ICitizenMgtService {
     @Override
     @Transactional
     public Citizens authenticateCitizen(String login, String password) {
-        Citizens citizen = entityManager.createQuery("SELECT c FROM Citizens c WHERE c.login = :login", Citizens.class)
-                                         .setParameter("login", login)
-                                         .getSingleResult();
-        if (citizen != null && BCrypt.checkpw(password, citizen.getPassword())) {
-            return citizen;
-        } else {
-            return null;
+        List<Citizens> results = entityManager.createQuery("SELECT c FROM Citizens c WHERE c.login = :login", Citizens.class)
+                                              .setParameter("login", login)
+                                              .getResultList();
+        if (!results.isEmpty() && BCrypt.checkpw(password, results.get(0).getPassword())) {
+            return results.get(0);  // Returns the first matching citizen
         }
+        return null;  // Returns null if no results or password doesn't match
     }
 
 }

@@ -5,10 +5,12 @@ import java.util.List;
 import org.acme.model.Mission;
 import org.acme.services.management.IMissionMgtService;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
+@ApplicationScoped
 public class MissionMgtService implements IMissionMgtService{
     @Inject
     EntityManager entityManager;
@@ -16,8 +18,11 @@ public class MissionMgtService implements IMissionMgtService{
     @Override
     @Transactional
     public Mission createMission(Mission mission) {
-        entityManager.persist(mission);
-        return mission;
+        // Merge the detached entity to reattach it to the persistence context
+        Mission mergedMission = entityManager.merge(mission);
+        // Now persist the merged entity
+        entityManager.persist(mergedMission);
+        return mergedMission;
     }
 
     @Override
@@ -44,7 +49,7 @@ public class MissionMgtService implements IMissionMgtService{
             existingMission.ZIP_code = updatedMission.ZIP_code;
             existingMission.address = updatedMission.address;
             existingMission.beginning_hour = updatedMission.beginning_hour;
-            existingMission.end_hour = updatedMission.end_hour;
+            existingMission.end_time = updatedMission.end_time;
             existingMission.description = updatedMission.description;
         }
         return existingMission;

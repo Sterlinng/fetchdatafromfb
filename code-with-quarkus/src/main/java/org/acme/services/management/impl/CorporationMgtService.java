@@ -33,8 +33,8 @@ public class CorporationMgtService implements ICorporationMgtService {
         createdCorporation.login = newCorporation.login;
         createdCorporation.password = newCorporation.password;
 
-        entityManager.persist(newCorporation);
-        return newCorporation;
+        entityManager.persist(createdCorporation);
+        return createdCorporation;
     }
 
     @Transactional
